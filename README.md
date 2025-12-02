@@ -1,50 +1,33 @@
-# Smart-Customer-Support-Workflow-with-LangGraph
-This project illustrates how to build a dynamic, AI-driven customer support system using LangGraph, a graph-based orchestration tool, integrated with OpenAI's language models. The system can categorize, analyze sentiment, respond appropriately, or escalate issues in real-time, providing a scalable solution for modern customer service challenges
-# Key Highlights
-Intelligent Routing: Queries are automatically classified into categories (Technical, Billing, General), and routed accordingly.
+# Smart Customer Support Workflow with LangGraph
 
-Emotion-aware Responses: Sentiment analysis helps determine the tone of queries (Positive, Neutral, Negative), enabling tailored responses or escalations.
+An LLM-powered customer support workflow built with LangGraph that routes user queries based on category and sentiment, and decides whether to respond automatically or escalate to a human.
 
-Flexible Workflow Design: The graph-based approach allows extensibility and easy visualization of complex workflows, promoting transparency and collaborative development.
+## 🚀 Features
+- Classifies incoming customer queries by issue type
+- Performs sentiment analysis on messages
+- Routes queries to:
+  - automated response generator, or
+  - human escalation path
+- Built using LangGraph for multi-step LLM orchestration
 
-Automation & Escalation: Critical or negative queries are escalated to human agents, ensuring seamless support continuity
+## 🧠 Architecture
+![Architecture Diagram](assets/architecture.png)
 
-# Demo Flow
-Customer query enters the system.
+High-level flow:
+1. Ingest user query
+2. Classify category (billing, technical, general, etc.)
+3. Analyze sentiment (negative, neutral, positive)
+4. Route:
+   - If low-risk → auto-response
+   - If high-risk / angry / complex → escalate
 
-The system categorizes and assesses sentiment.
+## 🛠 Tech Stack
+Python, LangGraph, OpenAI API, Pydantic, Jupyter, Mermaid (for diagrams)
 
-Based on results, it delivers tailored responses or escalates.
+## 📦 Setup
 
-Maintains a transparent process flow with visual diagrams and logs.
-
-# Technical Architecture
-Environment Setup: Utilizes dotenv for secret management, avoiding hardcoded API keys.
-
-State Management: Using TypedDict to structure interaction states.
-
-Node Functions: Dedicated functions for categorization, sentiment analysis, and response generation, powered by OpenAI models.
-
-Graph Construction: Edges define the flow, with conditional routing based on real-time analysis.
-
-Visualization: Mermaid.js diagram generation for workflow clarity.
-
-# Why It Matters
-This approach empowers businesses to:
-
-Reduce response times with automated workflows.
-
-Improve customer satisfaction through emotionally intelligent interactions.
-
-Scale support operations without proportional increase in staffing.
-
-Visualize and iterate workflows easily with integrated diagrams.
-
-# How to Present This
-Use visual diagrams to show the workflow architecture.
-
-Highlight sample interactions illustrating different customer scenarios.
-
-Emphasize scalability and customization options.
-
-Demonstrate potential integrations with existing support systems.
+```bash
+git clone https://github.com/your-username/Smart-Customer-Support-Workflow-with-LangGraph.git
+cd Smart-Customer-Support-Workflow-with-LangGraph
+pip install -r requirements.txt
+cp .env.example .env  # add your OPENAI_API_KEY

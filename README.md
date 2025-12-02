@@ -10,9 +10,6 @@ An LLM-powered customer support workflow built with LangGraph that routes user q
   - human escalation path
 - Built using LangGraph for multi-step LLM orchestration
 
-## 🧠 Architecture
-![Architecture Diagram](assets/architecture.png)
-
 High-level flow:
 1. Ingest user query
 2. Classify category (billing, technical, general, etc.)
